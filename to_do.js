@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $("button").click(function() {
     var value = $("#inputfield").val();
-    var newTodo = $("<li><input type='checkbox'>" + value + "</input><button id='delete'>delete</button></li>");
+    var newTodo = $("<li><input type='checkbox'>" + value + "</input><button class='delete'>delete</button></li>");
     
     newTodo.appendTo($("#incomplete ol"));
     $("#inputfield").val('');
@@ -19,8 +19,8 @@ $(document).ready(function() {
 			}
 		});
 
-		$("#delete").click(function() {
-			remove();
+		$(".delete").click(function() {
+			$(this).parent().remove();
 		});
 	});
 });
