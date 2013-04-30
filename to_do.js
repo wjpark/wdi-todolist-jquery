@@ -1,10 +1,10 @@
 $(document).ready(function() {
   $("button").click(function() {
-    var value = $("#inputfield").val();
-    var newTodo = $("<li><input type='checkbox'>" + value + "</input><button class='delete'>delete</button></li>");
+    var entry = $("#inputfield").val();
+    var newTodo = $("<li><input type='checkbox'>" + entry + "</input><button class='delete'>delete</button></li>");
     
-    newTodo.appendTo($("#incomplete ol"));
-    $("#inputfield").val('');
+    newTodo.appendTo($("#notcompleted ol"));
+    $("#inputfield").val(''); //clears input field
 
 		$("input:checkbox").click(function() {
 			var doneTodo = $(this);
@@ -13,7 +13,7 @@ $(document).ready(function() {
 				doneTodo.parent().css("color", "red");
 				doneTodo.parent().css("text-decoration", "line-through");
 			} else {
-				doneTodo.parent().appendTo("#incomplete ol");
+				doneTodo.parent().appendTo("#notcompleted ol");
 				doneTodo.parent().css("color", "black");
 				doneTodo.parent().css("text-decoration", "none");
 			}
